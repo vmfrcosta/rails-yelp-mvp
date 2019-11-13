@@ -1,0 +1,23 @@
+<div class="container">
+	<h1><%= @restaurant.name %></h1>
+	<h3><%= @restaurant.address %></h3>
+	<p><%= @restaurant.category %> <small>(phone: <%= @restaurant.phone_number %>)</small></p>
+
+	<h2>Reviews</h2>
+	<% @restaurant.reviews.each do |review| %>
+		<p>
+			<% review.rating.times do %>
+				<i class="fas fa-star"></i>
+			<% end %>	
+		</p>
+		<p><%= review.content %></p>
+	<% end %>
+	<% if @restaurant.reviews.empty? %>
+		<p>
+			There are no reviews for this restaurant.
+			<%= link_to 'Leave a review!', new_restaurant_review_path(@restaurant), class: 'send-review' %>
+		</p>
+	<% else %>
+		<%= link_to 'Leave a review!', new_restaurant_review_path(@restaurant), class: 'send-review' %>
+	<% end %>
+</div>

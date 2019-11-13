@@ -1,0 +1,19 @@
+// Place all the styles related to the restaurants controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// index
+.restaurants {
+	margin: 16px;
+}
+
+.restaurant-name {
+	color: #00918e;
+	font-weight: 700;
+	font-size: 32px;
+}
+
+.restaurant-name:hover {
+	color: rgb(132, 132, 132)
+}
